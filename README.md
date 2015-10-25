@@ -12,4 +12,4 @@ To try the app, clone the repository to your machine, then:
 The app requires ruby with the sinatra gem. The RSpec gem will also be required
 if you wish to run the test suite.
 
-![Screen Shot](http://i.imgur.com/tHUegbW.png)
+![Screen Shot](http://i.imgur.com/tHUegbW.png style="border: solid black 1px;")
