@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ruby Jack</title>
+  <link rel="stylesheet" type="text/css" href="/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/foundation.min.css">
+  <link rel="stylesheet" type="text/css" href="/custom.css">
+</head>
+<body>
+  <div class="row">
+    <h1>Welcome to Ruby Jack!</h1>
+    <h4>(Black Jack written in Ruby, without splitting and doubling and stuff)</h4>
+    <div class="columns small-6">
+      <h3>Player Hand</h3>
+      <% player_hand.cards.each do |card| %>
+        <p><%=card.summary%></p>
+      <% end %>
+      <% if player_hand.possible_scores.length > 1 %>
+        <p>
+          Your possible scores are <%= player_hand.possible_scores.join(', ') %><br>
+          Your most favorable score right now is <%= player_hand.score %>
+        </p>
+      <% else %>
+        <p>
+          Your score is <%= player_hand.score %>
+        </p>
+      <% end %>
+    </div>
+    <div class="columns small-6">
+      <% if winner %>
+        <h3>Dealer Hand</h3>
+        <% dealer_hand.cards.each do |card| %>
+          <p><%=card.summary%></p>
+        <% end %>
+        <p>
+          The dealer's score is <%= dealer_hand.score %>
+        </p>
+      <% else %>
+        <h3>Dealer Showing:</h3>
+        <p><%=dealer_hand.cards.last.summary%></p>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <h1><%=winner%></h1>
+    <form action="home" method="post">
+      <% if winner %>
+        <input class="button" type="submit" name="game" value="New Game">
+      <% else %>
+        <input class="button success" type="submit" name="game" value="Hit">
+        <input class="button alert" type="submit" name="game" value="Stay">
+      <% end %>
+    </form>
+  </div>
+</body>
+</html>
