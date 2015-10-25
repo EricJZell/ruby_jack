@@ -1,10 +1,10 @@
-# ruby_jack
-A simple black jack game written in ruby with OOP
-This is a refactored version of mine from Launch Academy
-It is now a Sinatra app. 
+# Ruby Jack
+
+Ruby Jack is a simple black jack application written in ruby with a focus
+on abstracting key game features into Objects. The classes created are Card, Deck,
+Hand, and BlackJack.
+It is now a Sinatra app.
 To try the app, clone the repository to your machine, then:
 
 * In your console: ```$ruby server.rb```
 * Go to http://localhost:4567/home
-
-
